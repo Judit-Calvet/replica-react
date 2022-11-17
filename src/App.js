@@ -1,24 +1,20 @@
-import logo from './logo.svg';
-import './App.css';
+import './Styles/App.scss'
+import Home from './pages/Home'
+import { BrowserRouter as Router, Routes, Route, Link } from "react-router-dom";
+import Discover from './pages/Discover'
+import Join from './pages/Join'
+
+//importa BR como R.R.R.L. que son elementos dentro de BR
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Router>
+      <Routes>
+        <Route path='/' exact element={<Home/>}/>
+        <Route path='/discover' exact element={<Discover/>}/>
+        <Route path='/join' exact element={<Join/>}/>
+      </Routes>
+    </Router>
   );
 }
 
